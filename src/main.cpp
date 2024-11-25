@@ -2,9 +2,6 @@
 #include "./conversion/conversion.hpp"
 #include "./input/input.hpp"
 
-std::string bin_to_hex(std::string bits);
-std::string hex_to_bin(std::string hex);
-
 int main() {
   while (true) {
     int choice_input = input::option();

@@ -12,6 +12,8 @@ class DES {
 private:
   DESKey key;
 
+  ofstream output_file;
+
   bitset<48> expansion_permutation(bitset<32> bits);
   bitset<6> subbits(unsigned int nr, bitset<48> bits);
   bitset<4> s_box_substitution(unsigned int nr, bitset<6> bits);
@@ -20,7 +22,8 @@ private:
   bitset<64> encryption_decryption_function(string message, vector < bitset<48>> keys);
 
 public:
-  DES(string key) {
+  DES(string key)
+  : output_file(this->key.get_output_file_name(), ios::app) {
     this->key = DESKey(key);
   }
 
