@@ -1,7 +1,6 @@
 #ifndef CIPHER_TEXT_FUNCTIONS_HPP
 #define CIPHER_TEXT_FUNCTIONS_HPP
 
-#include <iostream>
 #include <bitset>
 
 template<size_t N>

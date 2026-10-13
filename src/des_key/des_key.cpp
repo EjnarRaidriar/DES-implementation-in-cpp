@@ -55,8 +55,8 @@ vector<bitset<48>> DESKey::get_keys() {
 
   this->output_file << "Permutation 1 key = " << permuted_key_1 << endl;
 
-  unique_ptr<bitset<28>> left_key_ptr{new bitset<28>(left_part(permuted_key_1))};
-  unique_ptr<bitset<28>> right_key_ptr{new bitset<28>(right_part(permuted_key_1))};
+  unique_ptr<bitset<28>> left_key_ptr{make_unique<bitset<28>>(left_part(permuted_key_1))};
+  unique_ptr<bitset<28>> right_key_ptr{make_unique<bitset<28>>(right_part(permuted_key_1))};
 
   this->output_file << "L0 = " << *left_key_ptr << endl;
   this->output_file << "R0 = " << *right_key_ptr << endl << endl;

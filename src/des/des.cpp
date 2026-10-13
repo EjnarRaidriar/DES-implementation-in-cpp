@@ -73,8 +73,8 @@ bitset<64> DES::encryption_decryption_function(string message, vector<bitset<48>
   this->output_file << "Initial Permutation:" << endl
                     << message_bits << endl;
 
-  unique_ptr<bitset<32>> left_part_ptr{new bitset<32>(left_part(message_bits))};
-  unique_ptr<bitset<32>> right_part_ptr{new bitset<32>(right_part(message_bits))};
+  unique_ptr<bitset<32>> left_part_ptr{make_unique<bitset<32>>(left_part(message_bits))};
+  unique_ptr<bitset<32>> right_part_ptr{make_unique<bitset<32>>(right_part(message_bits))};
 
   this->output_file << "L0 = " << *left_part_ptr << endl;
   this->output_file << "R0 = " << *right_part_ptr << endl << endl;
